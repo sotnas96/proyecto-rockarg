@@ -1,0 +1,19 @@
+.container-navbar{
+    /* color a usar rgb(4,99,128) */ 
+     background-color: rgb(4,99,128);  
+}
+/* .border-nav{
+    border-bottom: 2px solid rgb(4,99,128);
+} */
+
+ul li a:hover {
+    border-bottom: 1px solid white;
+}
+/* .menu-hambur{
+    background-color: rgb(4,99,128);
+} */
+/* .logoS{
+    display: none;
+}
+
+@media  */
