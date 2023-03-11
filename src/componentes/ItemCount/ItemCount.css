@@ -1,0 +1,13 @@
+.buttomCount{
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-weight: 900;
+    width: 30%;
+    font-size: 30px;
+}
+.buttonContainer{
+    border:solid 1px black;
+    width:15%;
+    border-radius:7px;
+}
