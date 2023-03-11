@@ -1,21 +1,26 @@
-import { useState } from "react";
-const ItemCount = ()=> {
-    const [contador, setContador] = useState(2);
-    const sumar = () => {
-        setContador(contador+1);
-    }
-    const restar = () => {
-        setContador(contador-1)
-    }
-    
-    return (
-        <div>
-            {/* <h1> Item Count</h1>
-            <h2>{contador}</h2>
-            <button onClick={sumar}>Sumar</button>
-            <button onClick={restar}>Restar</button> */}
+import { useState } from "react"
 
-        </div>
+const ItemCount = ({initial=1, stock, onAdd}) =>{
+    const [count, setCount] = useState(initial);
+    
+    let add = () => {
+        if(stock > count){
+            setCount(count+1)
+        }
+    }
+    let restar = () => {
+        if (count > initial){
+            setCount(count-1)
+        }
+    }
+    return(
+        <div className="d-grid gap-2">
+
+            <button onClick={restar}className="btn btn-primary" type="button">-</button>
+            <p style={{textAlign:'center'}}>{count}</p>
+            <button onClick={add} className="btn btn-primary" type="button">+</button>
+            <button onClick={()=> onAdd(count)} className="btn btn-primary" type="button">Agregar al carrito</button>
+        </div> 
     )
 };
 export default ItemCount;

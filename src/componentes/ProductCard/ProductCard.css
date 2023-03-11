@@ -1,0 +1,29 @@
+.price{
+    font-size: 1.5rem;
+    color: red;
+}
+.itemName{
+    display: none;
+}
+.cardContainer{
+    min-width: 250px;
+    transition: all 0.5s ease;
+    border: none;
+    margin: 5px;
+    margin-bottom: 20px;
+    width: 22%;
+    padding:5px;
+}
+.cardContainer:hover{
+    cursor: pointer;
+    box-shadow:10px 5px 5px #c8c6c4;
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+    border-left: 0.05px solid grey;
+    border-top: 0.05px solid grey;
+
+
+}
+.cardContainer:hover p.itemName{
+    display: block;
+}
