@@ -3,14 +3,18 @@ import logoXl from '../../images/logoWhite-noBack.png'
 
 import logoS from '../../images/rockargIconWhite.png'
 import {AiOutlineMenu} from "react-icons/ai"
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import CartWidget from '../CartWidget/CartWidget'
+import Footer from '../Footer/Footer'
 function Navbar (props) {
-    
+    const listStyle = ({ isActive}) => ({ 
+        color:'white',
+        borderBottom: isActive ? '1px solid white' : 'none'
+    })
     return (
         <>
-            <nav className="navbar navbar-expand-lg  border-nav container-navbar">
+            <nav className="navbar navbar-expand-lg  border-nav container-navbar sticky-top">
                 <div className="container-fluid justify-content-between" style={{margin:10}}>
                     <Link to='/'  className="navbar-brand d-none d-sm-block" href="#">
                         <img src={logoXl} alt="" style={{width: 200}}/>
@@ -24,19 +28,19 @@ function Navbar (props) {
                     </button>
                     {/* <GiHamburgerMenu/> */}
                     <div className="collapse navbar-collapse justify-content-center" id="navbarNav" >
-                        <ul className="navbar-nav ">
+                        <ul className="navbar-nav " id='listNav'>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/" style={{color:"white"}} >Home</Link>
+                                <NavLink  className="nav-link active" aria-current="page" to="/" style={listStyle} >Home</NavLink>
                             </li>
                             <li className="nav-item">
-                            <Link to='/category/guitars' className="nav-link" href="#" style={{color:"white"}}>Guitars</Link >
+                            <NavLink to='/category/guitars' className="nav-link" href="#" style={listStyle}>Guitars</NavLink >
                             </li>
                             <li className="nav-item">
-                            <Link to='/category/keyboards' className="nav-link" href="#" style={{color:"white"}}>Keyboards</Link >
+                            <NavLink to='/category/keyboards' className="nav-link" href="#"  style={listStyle}>Keyboards</NavLink >
                             </li>
                             
                             <li className="nav-item">
-                            <Link to='/category/drums' className="nav-link" href="#"style={{color:"white"}}>Drums</Link >
+                            <NavLink to='/category/drums' className="nav-link" href="#" style={listStyle}>Drums</ NavLink>
                             </li>
                         </ul>
                     </div>
@@ -45,7 +49,10 @@ function Navbar (props) {
                         </Link>
                 </div>
             </nav>
-            {props.children}
+            <div style={{minHeight:'700px'}}>
+                {props.children }
+            </div>
+            <Footer/>
         </>
         // <div className='container-navbar'>
         //     {/* Existen 3 formas de importar imagenes */}

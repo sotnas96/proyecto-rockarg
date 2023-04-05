@@ -8,7 +8,7 @@ const ProductCard = ({item})=> {
 
                 <img src={item.img} className="card-img-top" alt="..."/>  
                 <div className="card-body lowCard">
-                    <h5 className="card-title" style={{fontSize:'1rem', fontWeight:'700'}}>{item.brand} </h5>
+                    <h5 className="card-title" style={{fontSize:'1.5rem', fontWeight:'700'}}>{item.brand} </h5>
                     <p className='itemName'>{item.name}</p>
                     <p className="card-text price">us${item.price}</p>
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
